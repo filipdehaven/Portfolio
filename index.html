@@ -14,6 +14,8 @@
         :root {
             --navy-blue: #34495E;
             --light-navy: #3d5a73;
+            --dark-navy: #2c3e50;
+            --light-blue: #5dade2;
             --cream: #f5f1e8;
             --dark-text: #2c2c2c;
             --light-text: #666666;
@@ -31,20 +33,21 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(245, 241, 232, 0.95);
+            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--light-navy) 100%);
             backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid rgba(52, 73, 94, 0.1);
+            border-bottom: 2px solid var(--light-blue);
+            box-shadow: 0 2px 10px rgba(52, 73, 94, 0.15);
         }
 
         .logo {
             font-weight: 700;
             font-size: 1.5rem;
-            color: var(--navy-blue);
+            color: white;
         }
 
         nav ul {
@@ -55,13 +58,13 @@
 
         nav a {
             text-decoration: none;
-            color: var(--dark-text);
+            color: white;
             font-size: 0.95rem;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--navy-blue);
+            color: var(--light-blue);
         }
 
         @media (max-width: 768px) {
@@ -80,6 +83,17 @@
             margin-top: 60px;
             text-align: center;
             animation: fadeIn 0.8s ease-out;
+            background: linear-gradient(180deg, #f5f1e8 0%, rgba(93, 173, 226, 0.08) 100%);
+        }
+
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 6px solid var(--navy-blue);
+            box-shadow: 0 15px 40px rgba(52, 73, 94, 0.3);
         }
 
         .hero-content h1 {
@@ -87,6 +101,13 @@
             margin-bottom: 1rem;
             color: var(--navy-blue);
             line-height: 1.2;
+        }
+
+        .hero-content h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--light-blue);
+            font-weight: 600;
         }
 
         .hero-content p {
@@ -98,19 +119,9 @@
             margin-right: auto;
         }
 
-        .hero-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 2rem;
-            border: 4px solid var(--navy-blue);
-            box-shadow: 0 10px 30px rgba(52, 73, 94, 0.2);
-        }
-
         .cta-button {
             display: inline-block;
-            background-color: var(--navy-blue);
+            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--light-navy) 100%);
             color: white;
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -118,21 +129,22 @@
             font-weight: 600;
             transition: all 0.3s ease;
             margin: 0 0.5rem;
+            box-shadow: 0 4px 15px rgba(52, 73, 94, 0.2);
         }
 
         .cta-button:hover {
-            background-color: var(--light-navy);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(52, 73, 94, 0.3);
         }
 
         .cta-button.secondary {
-            background-color: transparent;
+            background: transparent;
             border: 2px solid var(--navy-blue);
             color: var(--navy-blue);
         }
 
         .cta-button.secondary:hover {
-            background-color: var(--navy-blue);
+            background: var(--navy-blue);
             color: white;
         }
 
@@ -146,8 +158,8 @@
             }
 
             .hero-image {
-                width: 150px;
-                height: 150px;
+                width: 200px;
+                height: 200px;
             }
         }
 
@@ -164,6 +176,8 @@
             color: var(--navy-blue);
             margin-bottom: 2rem;
             text-align: center;
+            border-bottom: 3px solid var(--light-blue);
+            padding-bottom: 1rem;
         }
 
         .about-content {
@@ -179,7 +193,7 @@
         /* Skills Section */
         .skills {
             padding: 6rem 2rem;
-            background-color: white;
+            background: linear-gradient(135deg, white 0%, rgba(93, 173, 226, 0.05) 100%);
             animation: slideUp 0.8s ease-out;
         }
 
@@ -196,16 +210,18 @@
         }
 
         .skill-card {
-            background-color: var(--cream);
+            background-color: white;
             padding: 2rem;
             border-radius: 10px;
-            border-left: 5px solid var(--navy-blue);
+            border-left: 5px solid var(--light-blue);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 73, 94, 0.08);
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(52, 73, 94, 0.1);
+            box-shadow: 0 10px 30px rgba(52, 73, 94, 0.15);
+            border-left-color: var(--navy-blue);
         }
 
         .skill-card h3 {
@@ -225,7 +241,7 @@
 
         .skill-card li:before {
             content: "→ ";
-            color: var(--navy-blue);
+            color: var(--light-blue);
             font-weight: bold;
             margin-right: 0.5rem;
         }
@@ -239,16 +255,18 @@
         }
 
         .project-card {
-            background-color: white;
+            background: linear-gradient(135deg, white 0%, rgba(93, 173, 226, 0.03) 100%);
             padding: 3rem;
             border-radius: 10px;
             margin-bottom: 3rem;
-            border-top: 4px solid var(--navy-blue);
+            border-left: 5px solid var(--light-blue);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 73, 94, 0.1);
         }
 
         .project-card:hover {
             box-shadow: 0 15px 40px rgba(52, 73, 94, 0.15);
+            border-left-color: var(--navy-blue);
         }
 
         .project-card h3 {
@@ -259,7 +277,7 @@
 
         .project-card .project-meta {
             font-size: 0.9rem;
-            color: var(--light-text);
+            color: var(--light-blue);
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
@@ -273,13 +291,19 @@
         /* Leadership Section */
         .leadership {
             padding: 6rem 2rem;
-            background-color: white;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy-blue) 100%);
             animation: slideUp 0.8s ease-out;
+            color: white;
         }
 
         .leadership-container {
             max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .leadership .section-title {
+            color: white;
+            border-bottom-color: var(--light-blue);
         }
 
         .leadership-content {
@@ -290,13 +314,13 @@
         }
 
         .leadership-text h3 {
-            color: var(--navy-blue);
+            color: var(--light-blue);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
         .leadership-text p {
-            color: var(--light-text);
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1rem;
             line-height: 1.8;
         }
@@ -308,20 +332,21 @@
         }
 
         .stat {
-            background-color: var(--cream);
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 1.5rem;
             border-radius: 8px;
             text-align: center;
+            border: 1px solid var(--light-blue);
         }
 
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: var(--navy-blue);
+            color: var(--light-blue);
         }
 
         .stat-label {
-            color: var(--light-text);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 0.9rem;
             margin-top: 0.5rem;
         }
@@ -351,14 +376,16 @@
             background-color: white;
             padding: 2rem;
             border-radius: 10px;
-            border: 2px solid var(--navy-blue);
+            border: 2px solid var(--light-blue);
             text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(93, 173, 226, 0.1);
         }
 
         .cert-card:hover {
-            background-color: var(--cream);
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.05) 0%, rgba(52, 73, 94, 0.05) 100%);
             transform: scale(1.05);
+            border-color: var(--navy-blue);
         }
 
         .cert-card h4 {
@@ -374,7 +401,7 @@
         /* Projects Gallery Section */
         .gallery {
             padding: 6rem 2rem;
-            background-color: white;
+            background: linear-gradient(135deg, white 0%, rgba(93, 173, 226, 0.05) 100%);
             animation: slideUp 0.8s ease-out;
         }
 
@@ -391,17 +418,19 @@
         }
 
         .gallery-item {
-            background-color: var(--cream);
+            background-color: white;
             padding: 3rem;
             border-radius: 10px;
             text-align: center;
-            border: 2px dashed var(--navy-blue);
+            border: 2px solid var(--light-blue);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(93, 173, 226, 0.1);
         }
 
         .gallery-item:hover {
-            border-color: var(--light-navy);
-            background-color: rgba(52, 73, 94, 0.05);
+            border-color: var(--navy-blue);
+            background: linear-gradient(135deg, white 0%, rgba(93, 173, 226, 0.05) 100%);
+            transform: translateY(-5px);
         }
 
         .gallery-item h4 {
@@ -423,10 +452,11 @@
         }
 
         .blog-content {
-            background-color: white;
+            background: linear-gradient(135deg, white 0%, rgba(93, 173, 226, 0.05) 100%);
             padding: 3rem;
             border-radius: 10px;
             text-align: center;
+            border: 2px solid var(--light-blue);
         }
 
         .blog-content p {
@@ -437,11 +467,12 @@
 
         /* Footer */
         footer {
-            background-color: var(--navy-blue);
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy-blue) 100%);
             color: white;
             padding: 3rem 2rem;
             text-align: center;
             animation: slideUp 0.8s ease-out;
+            border-top: 2px solid var(--light-blue);
         }
 
         .footer-content {
@@ -456,6 +487,7 @@
         .footer-section h3 {
             margin-bottom: 1rem;
             font-size: 1.2rem;
+            color: var(--light-blue);
         }
 
         .social-links {
@@ -468,11 +500,11 @@
         .social-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            opacity: 0.8;
+            color: var(--light-blue);
         }
 
         .footer-bottom {
@@ -484,7 +516,7 @@
 
         .resume-download {
             display: inline-block;
-            background-color: white;
+            background: linear-gradient(135deg, white 0%, rgba(255, 255, 255, 0.9) 100%);
             color: var(--navy-blue);
             padding: 0.8rem 2rem;
             border-radius: 50px;
@@ -492,11 +524,12 @@
             font-weight: 600;
             transition: all 0.3s ease;
             margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
         }
 
         .resume-download:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
         }
 
         /* Animations */
@@ -549,7 +582,8 @@
     <section class="hero">
         <div class="hero-content">
             <img src="images/profile.jpg" alt="Filip DeHaven" class="hero-image">
-            <h1>Data Strategy & Analytics</h1>
+            <h1>Filip DeHaven</h1>
+            <h2>Data Strategy & Analytics</h2>
             <p>Transforming complex data into actionable insights that drive business decisions. Graduate student in Business Analytics with a background in political science, bringing a unique critical thinking lens to data-driven strategy.</p>
             <div>
                 <a href="#projects" class="cta-button">View My Work</a>
@@ -730,7 +764,7 @@
                 <p>I'm always interested in discussing analytics, business strategy, and data-driven solutions.</p>
             </div>
             <div class="footer-section">
-                <a href="resume.pdf" class="resume-download" download>Download Resume</a>
+                <a href="Resume.pdf" class="resume-download" download>Download Resume</a>
             </div>
             <div class="footer-section">
                 <div class="social-links">
